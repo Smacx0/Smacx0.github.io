@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Render</title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Jost' rel='stylesheet'>
+	<link rel="stylesheet" type="text/css" href="../styles/gfm.css">
+	<link rel="stylesheet" type="text/css" href="../styles/gfmeditor.css">
+</head>
+<body>
+	<header>
+		<div class="header-wrapper"><a href="https://smac01.github.io/">
+			<span class="material-icons">
+				arrow_back
+			</span></a>
+		</div>
+	</header>
+	<section>
+		<div class="container">
+			<div class="page-container">
+				<h2>Github Flavored Markdown Editor</h2>
+				<p>
+					A project based on editing and previewing Github Flavored Markdown Styles. The project utilize simple <a href="https://github.com/Smac01/Mini-projects/blob/master/js/minieditor.js">Multiline text editor</a> to edit, <a href="https://api.github.com/markdown" target="_blank">Github Markdown Api</a> for syntax highlighting and <a href="https://github.com/sindresorhus/github-markdown-css" target="_blank">Github Markdown CSS</a> for rendering the highlighted code.
+				</p>
+			</div>
+			<div class="editor-container">
+				<div class="editor-toolbar">
+					<div class="flex-layout">
+						<button class="edit-btn flex-layout">
+							<span class="material-icons">code</span>Edit
+						</button>
+						<button class="preview-btn flex-layout">
+							<span class="material-icons">visibility</span>
+							Preview
+						</button>
+					</div>
+					<div class="pr-5">
+						<select id="Indent-mode" class="form-select ml-5" aria-label="Indent-mode">
+							<optgroup label="Indent-mode">
+								<option selected>Spaces</option>
+								<option>Tabs</option>
+							</optgroup>
+						</select>
+						<select id="Indent-size" class="form-select ml-5" aria-label="Indent-size">
+							<optgroup label="Indent-size">
+								<option>2</option>
+								<option selected>4</option>
+								<option>8</option>
+							</optgroup>
+						</select>
+					</div>
+				</div>
+				<div class="editor-layout">
+					<div class="multiline-editor">
+						<div class="ss"></div>
+						<div class="editor-status-bar">
+							<span class="edited-info"></span>
+							<span class="download-btn flex-layout">
+								<span class="material-icons">download</span>Download
+							</span>
+						</div>
+					</div>
+					<div class="preview markdown-body">	
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- modal element -->
+		<div class="modal">
+			<div class="modal-content grid-layout">
+				<span class="close" onclick="closeModal()">&times;</span>
+				<div class="modal-body">
+					<p class="heading-text">Thanks for using our editor, we hope you liked it.</p>
+					<p class="body-text">Please enter your file name to proceed.</p>
+					
+					<input type="text" name="name" placeholder="Filename.md">
+					
+				</div>
+				<div class="modal-footer flex-layout end">
+					<button class="btn primary">Proceed</button>
+					<button class="btn secondary-outline" onclick="closeModal()">Cancel</button>
+			</div>
+		</div>
+	</section>
+	<footer class="flex-layout">
+		<p>Designed with
+			<span class="material-icons">favorite</span>
+		</p>
+	</footer>
+	<script src="../js/minieditor.js"></script>
+	<script src="../js/gfmeditor.js"></script>
+</body>
+</html>
